@@ -1,0 +1,66 @@
+<style>
+    .container {
+        background-color: #ABC9FF;
+        padding: 25px;
+        width: 800px;
+    }
+
+    input {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0px;
+        display: inline-block;
+        border: 2px solid green;
+    }
+
+    button {
+        background-color: #FFDEDE;
+        border: none;
+        padding: 15px;
+        color: #EB4747;
+        width: 25%;
+    }
+</style>
+
+<form>
+    <div class="container">
+        <h1 style="text-align:center; color:gray">URL Shortening User Registration</h1>
+        <div>
+            <label style="text-align:center; margin:auto; display:inline-block;" for="user">Username </label>
+            <input style="text-align:center; margin:auto;display:inline-block;" type="text" name="userName"
+                placeholder="Enter username" id="user" [(ngModel)]=userDetails.userName size="20" required />
+            <br />
+            <br />
+            <label for="pass">Password </label>
+            <input style="text-align:center;" type="email" name="password" placeholder="Enter password" id="pass"
+                [(ngModel)]=userDetails.password size="20" required />
+            <br />
+            <br />
+            <label style="text-align:center; margin:auto; display:inline-block;" for="Email">Email </label>
+            <input style="text-align:center; margin:auto;display:inline-block;" type="text" name="email"
+                placeholder="Enter email" id="email" [(ngModel)]=userDetails.email size="20" required />
+            <br />
+            <br />
+            <button type="submit" (click)="addUser()">Register</button>
+        </div>
+
+        <table class="table table-hover">
+            <tbody>
+
+                <tr *ngFor="let user of userRegData">
+                    <div *ngIf="user.email===userDetails.email;then thenBlock;else elseBlock"></div>
+                    <ng-template #thenBlock>Email id already exits!!</ng-template>
+                    <ng-template #elseBlock></ng-template>
+                </tr>
+            </tbody>
+        </table>
+        <!--
+        <div *ngIf="userDetails.userName==='';then thenBlock"></div>
+        <ng-template #thenBlock>userName Should Not be empty !!<br/></ng-template>
+        <div *ngIf="userDetails.password==='';then thenBlock"></div>
+        <ng-template #thenBlock>password Should Not be empty !!<br/></ng-template>
+        <div *ngIf="userDetails.email==='';then thenBlock"></div>
+        <ng-template #thenBlock>email Should Not be empty !!</ng-template>
+        -->
+    </div>
+</form>

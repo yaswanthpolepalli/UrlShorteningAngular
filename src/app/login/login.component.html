@@ -1,0 +1,66 @@
+<style>
+  .container {
+    background-color: #ABC9FF;
+    padding: 25px;
+    width: 800px;
+  }
+
+  input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0px;
+    display: inline-block;
+    border: 2px solid green;
+  }
+
+  button {
+    background-color: #FFDEDE;
+    border: none;
+    padding: 15px;
+    color: #EB4747;
+    width: 25%;
+  }
+</style>
+
+
+<form #myForm="ngForm" (ngSubmit)="onSubmit()">
+  <div class="container">
+    <h1 style="text-align:center; color:gray">URL Shortening page Login</h1>
+    <div>
+      <label style="text-align:center; margin:auto; display:inline-block;" for="user">User Email </label>
+      <input style="text-align:center; margin:auto;display:inline-block;" name="email" [(ngModel)]=userLogDetails.email
+        type="text" placeholder="Enter email" id="user" required />
+      <br />
+      <br />
+      <label for="pass">Password </label>
+      <input style="text-align:center;" name="password" [(ngModel)]=userLogDetails.password type="text"
+        placeholder="Enter Password" id="pass" required />
+
+      <br />
+      <br />
+    </div>
+    <table class="table table-hover">
+      <tbody>
+
+        <tr *ngFor="let user of userLogData">
+          <div *ngIf="user.email===userLogDetails.email;then thenBlock;else elseBlock"></div>
+          <ng-template #thenBlock>
+            <div *ngIf="user.password===userLogDetails.password;then thenBlock;else elseBlock"></div>
+            <ng-template #thenBlock>
+              <div *ngIf="user.authStatus==='accepted';"> 
+    
+              
+                
+                <button (click)="getVeriUser()">Login</button></div>
+              <div *ngIf="user.authStatus!=='accepted';">User is Not Authenticated!!</div>
+            </ng-template>
+            <ng-template #elseBlock></ng-template>
+          </ng-template>
+          <ng-template #elseBlock></ng-template>
+        </tr>
+      </tbody>
+    </table>
+ 
+  </div>
+ 
+  

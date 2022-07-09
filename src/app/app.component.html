@@ -1,0 +1,64 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">URL Service</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <!--
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/login">Login</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/register">Register</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/expand">Expand URL</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/shorten">Shorten URL</a>
+        </li>
+      </ul>
+    
+  
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/urlpage">Url</a>
+      </li>
+    </ul>  
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/dashboard">Dashboard</a>
+      </li>
+    </ul>
+  -->
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/userpage">User</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/adminlogin">Admin</a>
+      </li>
+    </ul>
+  </div>
+
+  <div *ngIf="preUrl==='/url/expandurl' || preUrl==='/url/shorturl' || preUrl==='/dashboard';">
+    <button style="width:100% ;height:3% ;margin:5px;padding:10px;float:right;"
+      [routerLink]="['user/login']">Logout</button>
+  </div>
+  <div *ngIf="preUrl==='/urlpage' || preUrl==='/edituser' || preUrl==='/url';">
+    <button style="width:100% ;height:3% ;margin:5px;padding:10px;float:right;"
+      [routerLink]="['user/login']">Logout</button>
+  </div>
+</nav>
+<router-outlet></router-outlet>

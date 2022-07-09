@@ -1,0 +1,45 @@
+<style>
+    .container{
+        background-color:#ABC9FF;
+        padding:25px;
+        width:800px;
+    }
+   
+    button{
+        background-color: #FFDEDE;
+        border:none;
+        padding:15px;
+        color:#EB4747;
+        width:25%;
+    }
+</style>
+
+<form>
+    <div class="container">
+    <h1 style="text-align:center; color:gray">URL Options</h1>
+    <div>
+    <br/>
+    <br/>
+    <h4>Click on this Button to Expand the Short URL</h4>
+    <br/>
+    <button (click)="onExpand()">ExpandUrl</button>
+    <br/>
+    <br/>
+    <h4>Click on this Button to get Short URL for the Large URL</h4>
+    <br/>
+    <button (click)="onShorten()">ShortUrl</button>
+    <br/>
+    <br/>
+    <h4>Click on this Button to add short URL for the large URL in database</h4>
+    <br/>
+    <button (click)="addUrl()">addUrl</button>
+    <br/>
+    <br/>
+    <h4>Click on this Button to go to dashboard</h4>
+    <br/>
+    <button (click)="dashboard()">Dashboard</button>
+    <br/>
+    <br/>
+    </div>
+    </div>
+    </form>
