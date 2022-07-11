@@ -1,0 +1,40 @@
+<style>
+    .container{
+        background-color:#ABC9FF;
+        padding:25px;
+        width:800px;
+    }
+    input{
+        width:100%;
+        padding:12px 20px;
+        margin:8px 0px;
+        display:inline-block;
+        border:2px solid green;
+    }
+    button{
+        background-color: #FFDEDE;
+        border:none;
+        padding:15px;
+        color:#EB4747;
+        width:25%;
+    }
+</style>
+
+<form>
+
+<div class="container">
+<h1 style="text-align: center; color:gray">Add URL</h1>
+<br/>
+<label style="text-align:center; margin:auto; display:inline-block;" for="OriUrl">Enter Original URL</label>
+<input style="text-align:center; margin:auto;display:inline-block;"  
+[(ngModel)]=urlDetails.longUrl name="longUrl" type="text" id="OriUrl"/>
+<br/>
+<br/>
+<button (click)="addShortUrl()">AddUrl</button>
+<br/>
+<br/>
+</div>
+
+{{ alog }}
+
+</form>

@@ -1,0 +1,76 @@
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">User Name</th>
+      <th scope="col">User Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr 
+    *ngFor="let user of userData"
+    >
+      <td> {{user.userName}} </td>
+      <td>{{user.email}}</td>
+      <button class="btn btn-primary" (click)="updateUser(user)">
+        Authenticate
+      </button>
+    </tr>
+  </tbody>
+</table>
+
+<!--
+<div class="container-fluid">
+    <div class="col align-self-center">
+      <div class="form-group">
+        <label for="ename" class="col-sm-2 col-form-label">User Name</label>
+        <input
+          type="text"
+          class="form-control"
+          name="txtename"
+          [(ngModel)]="userData.userName"
+          size="20"
+          pattern="^[a-zA-Z\s]{1,15}$"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="email" class="col-sm-2 col-form-label">Email</label>
+        <input
+          type="email"
+          class="form-control"
+          name="txtemail"
+          [(ngModel)]="userData.email"
+          size="20"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="pass" class="col-sm-2 col-form-label">Password</label>
+        <input
+          type="text"
+          class="form-control"
+          name="txtpass"
+          [(ngModel)]="userData.password"
+          size="20"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="auth" class="col-sm-2 col-form-label">authstatus</label>
+        <input
+          type="text"
+          class="form-control"
+          name="auth"
+          [(ngModel)]="userData.authstatus"
+          size="20"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary" (click)="updateUser()">
+          Update User
+        </button>
+      </div>
+    </div>
+  </div>
+-->

@@ -1,0 +1,47 @@
+<style>
+    .container{
+        background-color:#ABC9FF;
+        padding:25px;
+        width:800px;
+    }
+    input{
+        width:100%;
+        padding:12px 20px;
+        margin:8px 0px;
+        display:inline-block;
+        border:2px solid green;
+    }
+    button{
+        background-color: #FFDEDE;
+        border:none;
+        padding:15px;
+        color:#EB4747;
+        width:25%;
+    }
+</style>
+
+
+<form>
+<div class="container">
+<h1 style="text-align:center; color:gray">URL Shortening page Admin Login</h1>
+<div>
+<label style="text-align:center; margin:auto; display:inline-block;" for="user">Username </label>
+<input style="text-align:center; margin:auto;display:inline-block;" type="text" 
+placeholder="Enter Username" name="username" [(ngModel)]=adminLog.userName id="user" required/>
+<br/>
+<br/>
+<label for="pass">Password </label>
+<input  style="text-align:center;"  type="text" placeholder="Enter Password" 
+name="password" [(ngModel)]=adminLog.password id="pass" required/>
+<br/>
+<br/>
+</div>
+<div *ngIf="adminLog.userName==='admin';then thenBlock;else elseBlock"></div>
+<ng-template #thenBlock>
+    <div *ngIf="adminLog.password==='123456';then thenBlock;else elseBlock"></div>
+    <ng-template #thenBlock><button (click)="onLogin()">Login</button></ng-template>
+    <ng-template #elseBlock><button (click)="onInvalidLogin()">Login</button></ng-template>
+</ng-template>
+<ng-template #elseBlock><button (click)="onInvalidLogin()">Login</button></ng-template>
+</div>
+</form>
